@@ -1,1 +1,169 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spend Bill Gates' Money</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      color: green;
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .item h3 {
+      font-size: 1.5em;
+    }
+
+    .item p {
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #reset-btn {
+      background-color: #dc3545;
+      margin-top: 30px;
+    }
+
+    #reset-btn:hover {
+      background-color: #c82333;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spend Bill Gates' Money</h1>
+    <h2>Net Worth: <span id="net-worth">$100,000,000,000</span></h2>
+  </header>
+
+  <section class="items">
+    <div class="item">
+      <h3>iPhone 15 Pro Max</h3>
+      <p>Price: $1,500</p>
+      <button onclick="buyItem(1500)">Buy</button>
+    </div>
+
+    <div class="item">
+      <h3>Tesla Model S</h3>
+      <p>Price: $90,000</p>
+      <button onclick="buyItem(90000)">Buy</button>
+    </div>
+
+    <div class="item">
+      <h3>Private Jet</h3>
+      <p>Price: $50,000,000</p>
+      <button onclick="buyItem(50000000)">Buy</button>
+    </div>
+
+    <div class="item">
+      <h3>Yacht</h3>
+      <p>Price: $200,000,000</p>
+      <button onclick="buyItem(200000000)">Buy</button>
+    </div>
+
+    <div class="item">
+      <h3>NBA Team</h3>
+      <p>Price: $2,500,000,000</p>
+      <button onclick="buyItem(2500000000)">Buy</button>
+    </div>
+
+    <div class="item">
+      <h3>Mansion</h3>
+      <a href="https://www.spendbillion.com/spend-bill-gates-money-game"><p>Price: $45,000,000</p></a>
+      <button onclick="buyItem(45000000)">Buy</button>
+    </div>
+
+    <div class="item">
+      <h3>Rolex Watch</h3>
+      <p>Price: $50,000</p>
+      <button onclick="buyItem(50000)">Buy</button>
+    </div>
+  </section>
+
+  <footer>
+    <button id="reset-btn" onclick="resetGame()">Reset Game</button>
+  </footer>
+
+  <script>
+    let netWorth = 100000000000; // $100 billion
+
+    function formatMoney(amount) {
+      return `$${amount.toLocaleString()}`;
+    }
+
+    function buyItem(price) {
+      if (netWorth >= price) {
+        netWorth -= price;
+        updateNetWorth();
+      } else {
+        alert("Not enough money! Try something cheaper.");
+      }
+    }
+
+    function updateNetWorth() {
+      const netWorthEl = document.getElementById('net-worth');
+      netWorthEl.textContent = formatMoney(netWorth);
+
+      if (netWorth <= 0) {
+        netWorthEl.style.color = "red";
+        alert("You've spent all of Bill Gates' money!");
+      }
+    }
+
+    function resetGame() {
+      netWorth = 100000000000;
+      document.getElementById('net-worth').style.color = "green";
+      updateNetWorth();
+    }
+
+    // Initialize the net worth on page load
+    updateNetWorth();
+  </script>
+</body>
+</html>
