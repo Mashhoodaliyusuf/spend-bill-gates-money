@@ -6,4 +6,4 @@ You can add any items in the cart and checkout with your selected items. If you 
 
 This is full of fun online game that lets you unleash your inner billionaire!. When you play this game, you will feel like you are billionaire who have the power to spend any amount of money on luxurious items. Not just that, this spend bill gates money game also teach you the importance of money in your life and will show you how to manage your finance.
 
-You can play Spend Bill Gate's Money Game here https://www.spendbillion.com/spend-bill-gates-money-game
+You can play Spend Bill Gate's Money Game here https://www.spendopedia.com
